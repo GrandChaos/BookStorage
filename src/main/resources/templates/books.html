@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Books</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Название</th>
-            <th>Автор</th>
-            <th>Год издания</th>
-        </tr>
-        <tr th:each="book: ${books}">
-            <td th:text="${book.id}"></td>
-            <td th:text="${book.name}"></td>
-            <td th:text="${book.author}"></td>
-            <td th:text="${book.year}"></td>
-        </tr>
-    </table>
-    </div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <ul class="nav nav-tabs"  role="tablist">
+            <li class="nav-item">
+                <a href="#"><img src="https://imgur.com/q4ORQDI" alt="logo"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Список</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/books/add">Добавить</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/books/del">Удалить</a>
+            </li>
+        </ul>
+    </nav>
 
-    <input type="button" value="Удалить книгу" onclick="document.location='/books/del'">
-    <input type="button" value="Добавить книгу" onclick="document.location='/books/add'">
-
+        <div class = "container p-4">
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Год</th>
+                </tr>
+                <tr th:each="book: ${books}">
+                    <td th:text="${book.id}"></td>
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.year}"></td>
+                </tr>
+            </table>
+        </div>
 </body>
 </html>

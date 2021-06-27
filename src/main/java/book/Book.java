@@ -24,7 +24,6 @@ class Book {
     public String getAuthor() {
         return author;
     }
-
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -32,7 +31,6 @@ class Book {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -40,7 +38,6 @@ class Book {
     public String getYear() {
         return year;
     }
-
     public void setYear(String year) {
         this.year = year;
     }
@@ -60,7 +57,6 @@ class TempBook {//без id
     public String getAuthor() {
         return author;
     }
-
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -68,7 +64,6 @@ class TempBook {//без id
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -76,7 +71,6 @@ class TempBook {//без id
     public String getYear() {
         return year;
     }
-
     public void setYear(String year) {
         this.year = year;
     }
