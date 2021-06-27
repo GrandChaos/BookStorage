@@ -13,8 +13,7 @@ public class BookController {
 
     @GetMapping("/books")
     public String bookForm(Model model) {
-            model.addAttribute("empty", storage.isEmpty());
-            model.addAttribute("books", storage.getBooks());
+        model.addAttribute("books", storage.getBooks());
         return "books";
     }
 
@@ -32,7 +31,7 @@ public class BookController {
     }
 
     @RequestMapping("books/del")
-    public String bookDel(@RequestParam(value = "id", required = false, defaultValue = "0") int id, Model model){
+    public String bookDel(@RequestParam(value = "id", required = false, defaultValue = "-1") int id, Model model){
         model.addAttribute("books", storage.getBooks());
         storage.delete(id);
         return "del";

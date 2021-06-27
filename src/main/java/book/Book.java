@@ -100,13 +100,13 @@ class BookStorage{
         count++;
     }
 
-    public boolean isEmpty(){
-        if (books.isEmpty()) return true;
-        return false;
-    }
-
-    public void delete(int id) {
-        books.remove(id);
+    public void delete(int idToDel) {
+        for (int i = 0; i < books.size(); i++ ) {
+            if (books.get(i).getId() == idToDel) {
+                books.remove(i);
+                break;
+            }
+        }
     }
 
 }

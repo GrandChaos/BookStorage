@@ -7,18 +7,18 @@
 <body>
     <table>
         <tr>
-            <th>Удалить</th>
             <th>Id</th>
             <th>Название</th>
             <th>Автор</th>
             <th>Год</th>
+            <th>Удалить</th>
         </tr>
         <tr th:each="book: ${books}">
-            <td><a th:href="@{/books/del?id={bookId}(bookId=${book.id})}">-</a></td>
             <td th:text="${book.id}"></td>
             <td th:text="${book.name}"></td>
             <td th:text="${book.author}"></td>
             <td th:text="${book.year}"></td>
+            <td><a th:href="@{/books/del?id={bookId}(bookId=${book.id})}">Удалить</a></td>
         </tr>
     </table>
 
