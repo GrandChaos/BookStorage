@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Год издания</th>
+        </tr>
+        <tr th:each="book: ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.name}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.year}"></td>
+        </tr>
+    </table>
+    </div>
+
+    <input type="button" value="Удалить книгу" onclick="document.location='/books/del'">
+    <input type="button" value="Добавить книгу" onclick="document.location='/books/add'">
+
+</body>
+</html>

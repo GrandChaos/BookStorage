@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Удалить</th>
+            <th>Id</th>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Год</th>
+        </tr>
+        <tr th:each="book: ${books}">
+            <td><a th:href="@{/books/del?id={bookId}(bookId=${book.id})}">-</a></td>
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.name}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.year}"></td>
+        </tr>
+    </table>
+
+    <input type="button" value="Перейти к списку" onclick="document.location='/books'">
+
+</body>
+</html>

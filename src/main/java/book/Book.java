@@ -1,5 +1,7 @@
 package book;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 class Book {
@@ -17,6 +19,42 @@ class Book {
 
     public int getId() {
         return id;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+}
+
+class TempBook {//без id
+    private String name;
+    private String author;
+    private String year;
+
+    public TempBook(String name, String author, String year) {
+        this.author = author;
+        this.name = name;
+        this.year = year;
     }
 
     public String getAuthor() {
@@ -65,6 +103,10 @@ class BookStorage{
     public boolean isEmpty(){
         if (books.isEmpty()) return true;
         return false;
+    }
+
+    public void delete(int id) {
+        books.remove(id);
     }
 
 }
